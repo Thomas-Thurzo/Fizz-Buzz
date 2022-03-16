@@ -55,6 +55,19 @@ footer .social > a:hover {
     color: var(--secondary-color);
 }
 
+.Fizz{
+    color: lightgreen;
+}
+
+.Buzz{
+    color: blue;
+}
+
+.FizzBuzz{
+    color: red;
+    font-weight: bold;
+}
+
 /* Prism Installation */
 code[class*="language-"],
     pre[class*="language-"] {

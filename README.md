@@ -1,3 +1,4 @@
-# MiniSiteTemplate
+# Fizz-Buzz
 
-Website Template für JavaScript Projekte.
+Eine Coding Übung für JavaScript.
+

@@ -3,7 +3,7 @@
 <html lang="de" class="h-100">
 
 <head>
-    <title>App Name</title>
+    <title>FIZZ-BUZZ</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -29,7 +29,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">APP NAME</a>
+        <a class="navbar-brand" href="#">FIZZ-BUZZ</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,7 @@
                     <a class="nav-link active" aria-current="page" href="code.html">Programmcode</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git-Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/Thomas-Thurzo/Fizz-Buzz">Git-Repo</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" href="https://www.thomas-thurzo.com/">About</a>
@@ -59,24 +59,70 @@
     <!-- Main Sektion -->
     <main class="flex-shrink-0">
         <div class="container py-5 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">Der Programmcode für APP NAME</h2>
+            <h2 class="border-1 border-bottom border-dark">Der Programmcode für FIZZ-BUZZ</h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            // Call Hello World
-                            function helloWorld(){
-                                alert("Hallo Welt");
+                           
+                            // Start Funktion 
+                            function getValues(){
+
+                                // Get Zahlen
+                                let fizzZahl = document.getElementById("fizzZahl").value;
+                                let buzzZahl = document.getElementById("buzzZahl").value;
+
+                                // Umwandeln Zahlen in Integer
+                                fizzZahl = parseInt(fizzZahl);
+                                buzzZahl = parseInt(buzzZahl);
+
+                                // Check Eingabe
+                                if(fizzZahl == buzzZahl){
+                                    alert("Bitte zwei unterschiedliche Zahlen eingeben!");
+                                }
+                                else{
+                                    // Zahlen anzeigen
+                                anzeigeFunktion(fizzZahl, buzzZahl);
+                                } 
                             }
+
+                            // Anzeige Funktion
+                            function anzeigeFunktion(fizzZahl, buzzZahl){
+
+                                let templateRows = "";
+
+                                for (let index = 0; index <= 100; index++) {
+
+                                    if(index % fizzZahl == 0 && index % buzzZahl == 0 && index != 0){
+                                        templateRows += `<tr><td>` + "FIZZ-BUZZ" + `</tr></td>`;
+                                    }
+                                    else if(index % fizzZahl == 0 && index != 0){
+                                        templateRows += `<tr><td>` + "Fizz" + `</tr></td>`;
+                                    }
+                                    else if(index % buzzZahl == 0 && index != 0){
+                                        templateRows += `<tr><td>` + "Buzz" + `</tr></td>`;
+                                    }
+                                    else{
+                                        templateRows += `<tr><td>` + index + `</tr></td>`;
+                                    }     
+                                }
+
+                                document.getElementById("ergebnis").innerHTML = templateRows;
+                            }
+
                         </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>Der Programmcode ist in einer Funktion.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is eine Funktion das zeigt eine Nachricht 
-                        von "Hello World".
+                    <h5>FIZZ-BUZZ</h5>
+                    <p>Fizz-Buzz wurde mit zwei Funktionen geschrieben.</p>
+                    <p>Die erste Funktion holt die Zahlen aus dem Eingabe Formular,
+                        rechnet sie um in Integer Werte, überprüft ob die Zahlen unterschiedlich 
+                        sind und führt zuletzt die zweite Funktion aus.</p> 
+                    <p>Die zweite Funktion führt die Berechnungen durch und gibt die 
+                        Zahlen wieder aus.
                     </p>
+                
                 </div>
             </div>
     
